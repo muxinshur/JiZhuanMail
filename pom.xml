@@ -19,6 +19,7 @@
         <mysql.version>8.3.0</mysql.version>
         <fastjson.version>2.0.48</fastjson.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
+        <slf4j.version>2.0.12</slf4j.version>
     </properties>
 
     <dependencies>
@@ -58,6 +59,13 @@
             <version>${commons-lang3.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -86,6 +94,24 @@
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.mail.OnlineStoreApplication.java</mainClass>
+                    <skip>true</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>

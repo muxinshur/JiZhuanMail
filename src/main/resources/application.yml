@@ -6,6 +6,11 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/JiZhuanMail
+    url: jdbc:mysql://localhost:3306/jizhuan_mail
     username: root
     password: 123456
+
+mybatis-plus:
+  typeAliasesPackage: com/mail/domain/*/domain/aggregate/entity
+  mapperLocations: com/mail/infrastructure/mapper/*Mapper.xml
+  configLocation: classpath:mybatis/mybatis-config.xml
