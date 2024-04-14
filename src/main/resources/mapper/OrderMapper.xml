@@ -4,5 +4,30 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mail.infrastructure.mapper.OrderMapper">
 
+    <resultMap type="OrderPo" id="OrderPoResult">
+        <id property="orderId" column="order_id"/>
+        <result property="buyerId" column="buyer_id"/>
+        <result property="sellerId" column="seller_id"/>
+        <result property="totalAmount" column="total_amount"/>
+        <result property="discountAmount" column="discount_amount"/>
+        <result property="payAmount" column="pay_amount"/>
+        <result property="freightAmount" column="freight_amount"/>
+        <result property="payType" column="pay_type"/>
+        <result property="payTime" column="pay_time"/>
+        <result property="expressId" column="express_id"/>
+        <result property="confirmFlag" column="confirm_flag"/>
+        <result property="orderItemList" column="order_item_list"/>
+        <result property="recipientInformation" column="recipient_information"/>
+    </resultMap>
+
+    <sql id="selectOrderVo">
+        select order_id, buyer_id, seller_id, total_amount, discount_amount, pay_amount, freight_amount, pay_type, pay_time, express_id, confirm_flag, order_item_list, recipient_information
+        from order
+    </sql>
+
+    <select id="selectOrderByOrderId" parameterType="Long" resultMap="OrderPoResult">
+        <include refid="selectOrderVo"/>
+        where order_id = #{orderId}
+    </select>
 
 </mapper>

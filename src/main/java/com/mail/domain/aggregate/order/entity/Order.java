@@ -90,6 +90,22 @@ public class Order implements BaseEntity<Order> {
         this.recipientInformation = recipientInformation;
     }
 
+    public Order(long orderId, long buyerId, long sellerId, BigDecimal totalAmount, BigDecimal discountAmount, BigDecimal payAmount, BigDecimal freightAmount, Integer payType, Date payTime, String expressId, Integer confirmFlag, List<OrderItem> orderItemList, RecipientInformation recipientInformation) {
+        this.orderId = orderId;
+        this.buyerId = buyerId;
+        this.sellerId = sellerId;
+        this.totalAmount = totalAmount;
+        this.discountAmount = discountAmount;
+        this.payAmount = payAmount;
+        this.freightAmount = freightAmount;
+        this.payType = payType;
+        this.payTime = payTime;
+        this.expressId = expressId;
+        this.confirmFlag = confirmFlag;
+        this.orderItemList = orderItemList;
+        this.recipientInformation = recipientInformation;
+    }
+
     /*
      * Getter
      * */

@@ -5,7 +5,7 @@
     <groupId>com.mail</groupId>
     <artifactId>JiZhuan-Mail</artifactId>
     <version>0.0.1</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>JiZhuan-Mail</name>
     <description>纪赚商城，一个基于DDD的B2C商场</description>
 
@@ -101,8 +101,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.mail.OnlineStoreApplication.java</mainClass>
-                    <skip>true</skip>
+                    <mainClass>com.mail.OnlineStoreApplication</mainClass>
+                    <skip>false</skip>
                 </configuration>
                 <executions>
                     <execution>

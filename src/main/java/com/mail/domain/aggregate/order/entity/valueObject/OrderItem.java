@@ -16,11 +16,6 @@ public class OrderItem implements BaseValueObject<OrderItem> {
     private final Long orderId;
 
     /*
-    * 商品ID
-    * */
-    private final Long itemId;
-
-    /*
     * 商品SPU ID
     * */
     private final Long spuId;
@@ -48,9 +43,8 @@ public class OrderItem implements BaseValueObject<OrderItem> {
     /*
      * 构造方法
      * */
-    public OrderItem(Long orderId, Long itemId, Long spuId, Long skuId, Integer amount, BigDecimal unitPrice, Object snapshot) {
+    public OrderItem(Long orderId, Long spuId, Long skuId, Integer amount, BigDecimal unitPrice, Object snapshot) {
         this.orderId = orderId;
-        this.itemId = itemId;
         this.spuId = spuId;
         this.skuId = skuId;
         this.amount = amount;
@@ -63,10 +57,6 @@ public class OrderItem implements BaseValueObject<OrderItem> {
      * */
     public Long getOrderId() {
         return orderId;
-    }
-
-    public Long getItemId() {
-        return itemId;
     }
 
     public Long getSpuId() {
@@ -103,7 +93,6 @@ public class OrderItem implements BaseValueObject<OrderItem> {
     public boolean sameValueAs(OrderItem other) {
         return other != null && new EqualsBuilder().
                 append(orderId, other.getOrderId()).
-                append(itemId, other.getItemId()).
                 append(spuId, other.getSpuId()).
                 append(skuId, other.getSkuId()).
                 append(amount, other.getAmount()).

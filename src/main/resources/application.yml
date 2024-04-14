@@ -11,6 +11,6 @@ spring:
     password: 123456
 
 mybatis-plus:
-  typeAliasesPackage: com/mail/domain/*/domain/aggregate/entity
-  mapperLocations: com/mail/infrastructure/mapper/*Mapper.xml
+  typeAliasesPackage: com/mail/infrastructure/entity
+  mapperLocations: classpath:mapper/*Mapper.xml
   configLocation: classpath:mybatis/mybatis-config.xml
